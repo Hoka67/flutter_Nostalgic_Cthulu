@@ -1,6 +1,6 @@
-// first_screen.dart
 import 'package:flutter/material.dart';
-import 'character_creation_screen.dart'; // character_creation_screen.dartをインポート
+import '../widgets/custom_button.dart';
+import 'character_creation_screen.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
@@ -11,26 +11,22 @@ class FirstScreen extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Image.asset(
-            'assets/Gemini_1.jpeg',
+            'assets/Gemini_1.jpeg', // 画像ファイルへのパスを適切に設定してください
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
           ),
           Center(
             child: Column(
-              // 縦方向に並べるためにColumnを使う
-              mainAxisAlignment: MainAxisAlignment.center, // 中央寄せ
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 const Text(
-                  'クトゥルフRPG', // ゲームタイトル
+                  'クトゥルフRPG',
                   style: TextStyle(fontSize: 48, color: Colors.white),
                 ),
-                const SizedBox(height: 50), // タイトルとボタンの間に隙間を作る
-                ElevatedButton(
-                  child: const Text(
-                    'ゲームスタート',
-                    style: TextStyle(fontSize: 24),
-                  ),
+                const SizedBox(height: 50),
+                CustomButton(
+                  text: 'ゲームスタート',
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -38,11 +34,6 @@ class FirstScreen extends StatelessWidget {
                           builder: (context) => CharacterCreationScreen()),
                     );
                   },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.amber,
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 50, vertical: 20),
-                  ),
                 ),
               ],
             ),
