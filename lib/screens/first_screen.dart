@@ -11,7 +11,7 @@ class FirstScreen extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Image.asset(
-            'assets/Gemini_1.jpeg', // 画像ファイルへのパスを適切に設定してください
+            'assets/images/Gemini_1.jpeg',
             fit: BoxFit.cover,
             width: double.infinity,
             height: double.infinity,
